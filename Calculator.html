@@ -1,0 +1,65 @@
+<html>
+	<head>
+        <title>Calculator</title>  
+    </head>
+   
+	<body>
+	<div align="center">
+        <h1 style= "color:blue;"><CENTER>CALCULATOR</CENTER></h1> <br>
+        <img src="https://media.istockphoto.com/photos/close-up-calculator-on-business-working-desk-dark-background-picture-id1155347271" width=160 height=70 alt="Calculator Image" attributes-list/>
+
+	    <br><hr>
+	<label><b>Input 1*:</b></label>
+	<input id="inpt1" type= "text" placeholder= "Enter 1st Value" required >
+	<br>
+		<label><b>Input 2*:</b></label>
+	<input id="inpt2" type= "text" placeholder= "Enter 2nd Value" required >
+	<br><br>
+	<label><b>Select Operation:</b></label> &nbsp;
+	 <select id="op" name="Operation">
+            <option value="0">Operation</option>
+            <option value="1">ADD</option>
+            <option value="2">SUBTRACT</option>
+            <option value="3">MULTIPLY</option>
+            <option value="4">DIVIDE</option>
+           
+           </select> 
+    <br><br>
+		 <input id="sbt" type= "submit" value="Calculate"> &nbsp; &nbsp;
+		  <input type= "reset">
+		 <br> <br>
+		 <span id="output" style="border:outset;" style="padding: auto;">Result</span>
+	</div>
+
+	<script>
+		const text1 = document.getElementById("inpt1");
+const text2 = document.getElementById("inpt2");
+const cal = document.getElementById("sbt");
+const screen =  document.getElementById("output");
+const opr = document.getElementById("op");
+function display() {
+    let value1 = parseInt(text1.value);
+    let value2 = parseInt(text2.value);
+    let x = opr.value;
+    let operation = "0"
+    
+    if(x == "1"){
+        operation = value1 + value2;
+    }
+    if (x == "2"){
+        operation = value1-value2;
+    }
+    if (x == "3"){
+        operation = value1*value2;
+    }
+    if (x == "4"){
+        operation = value1/value2;
+    }
+screen.innerText = operation;
+}
+cal.addEventListener('click', display);
+	</script> 
+
+
+</body>
+</html>
